@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<div class='component-content'>
+    <div class = 'lefthalf'>
+      <span class='component-title'>[{{title}}]</span>
+      <span><a>
+        <img id='createnew' width='20' height='20' src='../../../../assets/add-icon.png' title='Add New'></a>
+      </span>
+    </div>
+  </div>
+  <p *ngIf='!vendors'>Loading ...</p>
+  <table class="table table-sm" *ngIf='vendors'>
+    <tr>
+      <th class="table-secondary btn-link">
+        <a class="btn btn-link font-weight-bold"><u>Id</u></a>
+      </th>
+      <th class="table-secondary btn-link">
+        <a class="btn btn-link font-weight-bold"><u>Code</u></a>
+      </th>
+      <th class="table-secondary btn-link">
+        <a class="btn btn-link font-weight-bold"><u>Address</u></a>
+      </th>
+      <th class="table-secondary btn-link">
+        <a class="btn btn-link font-weight-bold"><u>Phone</u></a>
+      </th>
+      <th class="table-secondary btn-link">
+        <a class="btn btn-link font-weight-bold"><u>Email</u></a>
+      </th>
+      <th class="table-secondary btn-link">
+        Privilege
+      </th>
+      <th  class="table-secondary btn-link">
+        Action
+      </th>
+    </tr>
+    <tr *ngFor='let vendor of vendors'>
+      <td>{{vendor.id}}</td>
+      <td>{{vendor.code}}</td>
+      <td>{{vendor.address}}, {{vendor.city}}, {{vendor.state}} {{vendor.zip}}</td>
+      <td>{{vendor.phoneNumber}}</td>
+      <td>{{vendor.email}}</td>
+      <td></td>
+      
+    </tr>
+  </table>
