@@ -1,3 +1,33 @@
-<p>
-  vendor-detail works!
-</p>
+<app-menu></app-menu>
+<div class='component-content'>
+    <div class = 'lefthalf'>
+      <span class='component-title'>[{{title}}]</span>
+    </div>
+  </div>
+  <table class="table table-sm" *ngIf='vendor'>
+    <tr>
+      <td>Id</td><td>{{ vendor.id}}</td>
+    </tr>
+    <tr>
+        <td>Vendor Code</td><td>{{ vendor.code }}</td>
+      </tr>
+    <tr>
+      <td>Vendor Name</td><td>{{ vendor.name }}</td>
+    </tr>
+    <tr>
+      <td>Address</td><td>{{ vendor.address }} {{ vendor.city }}, {{ vendor.state }} {{ vendor.zip }}</td>
+    </tr>
+    <tr>
+      <td>Phone</td><td>{{ vendor.phoneNumber }}</td>
+    </tr>
+    <tr>
+      <td>Email</td><td>{{ vendor.email }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <a routerLink='/vendor/edit/{{vendor.id}}' class='btn btn-primary' title='Edit'>Edit</a>
+        <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+      </td>
+    </tr>
+  </table>
+  <router-outlet></router-outlet>

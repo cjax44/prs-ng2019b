@@ -24,7 +24,7 @@ export class VendorListComponent implements OnInit {
         console.log(this.vendors);
         }
         else {
-          console.log("Error getting users");
+          console.log("Error getting vendors");
           // implement error handling
         }
       }
