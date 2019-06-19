@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
         console.log(this.products);
         }
         else {
-          console.log("Error getting users");
+          console.log("Error getting products");
           // implement error handling
         }
       }
