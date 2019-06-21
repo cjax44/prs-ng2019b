@@ -1,0 +1,40 @@
+import { User } from './user.class';
+
+
+export class PurchaseRequest {
+    id: number;
+	user: User;
+    description: string;
+    justification: string;
+    dateNeeded: Date;
+    deliveryMode: string;
+    status: string;
+    total: number;
+    submittedDate: Date;
+    reasonForRejection: string;
+    
+
+    constructor(id:number=0, user:User=null, description:string="", justification:string="", 
+                dateNeeded:Date=null, deliveryMode:string="", status:string="", total:number=0, 
+                submittedDate:Date=null, reasonForRejection:string="") {
+
+                    this.id = id;
+                    this.user = user;
+                    this.description = description;
+                    this.justification = justification;
+                    this.dateNeeded = dateNeeded;
+                    this.deliveryMode = deliveryMode;
+                    this.status = status;
+                    this.total = total;
+                    this.submittedDate = submittedDate;
+                    this.reasonForRejection = reasonForRejection;
+
+
+    }
+
+    about(): string {
+        return "PR: id="+this.id+", user="+this.user+", desc="+this.description+", just="+this.justification+", dateNeed="
+                +this.dateNeeded+", delivery="+this.deliveryMode+", status="+this.status+". total="+this.total
+                +", dateSub="+this.submittedDate+", reason="+this.reasonForRejection;
+    }
+}

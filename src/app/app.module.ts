@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { UserService } from './service/user.service';
+import { SystemService } from './service/system.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { JsonResponse } from './model/json-response.class';
@@ -21,6 +22,18 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { SortPipe } from './pipe/sort.pipe';
+import { PurchaseRequestDetailComponent } from './feature/pr/purchase-request-detail/purchase-request-detail.component';
+import { PurchaseRequestListComponent } from './feature/pr/purchase-request-list/purchase-request-list.component';
+import { PurchaseRequestEditComponent } from './feature/pr/purchase-request-edit/purchase-request-edit.component';
+import { PurchaseRequestCreateComponent } from './feature/pr/purchase-request-create/purchase-request-create.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { PurchaseRequestApproveComponent } from './feature/pr/purchase-request-approve/purchase-request-approve.component';
+import { PurchaseRequestReviewComponent } from './feature/pr/purchase-request-review/purchase-request-review.component';
+import { PurchaseRequestLinesComponent } from './feature/pr/purchase-request-lines/purchase-request-lines.component';
+import { PurchaseRequestLineItemCreateComponent } from './feature/prli/purchase-request-line-item-create/purchase-request-line-item-create.component';
+import { PurchaseRequestLineItemEditComponent } from './feature/prli/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +41,7 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
     UserListComponent,
     MenuComponent,
     AboutComponent,
+    SortPipe,
     VendorListComponent,
     UserCreateComponent,
     UserEditComponent,
@@ -38,7 +52,17 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
     ProductListComponent,
     ProductCreateComponent,
     ProductEditComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    PurchaseRequestDetailComponent,
+    PurchaseRequestListComponent,
+    PurchaseRequestEditComponent,
+    PurchaseRequestCreateComponent,
+    UserLoginComponent,
+    PurchaseRequestApproveComponent,
+    PurchaseRequestReviewComponent,
+    PurchaseRequestLinesComponent,
+    PurchaseRequestLineItemCreateComponent,
+    PurchaseRequestLineItemEditComponent
   ],
   imports: [
     BrowserModule,

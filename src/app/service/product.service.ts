@@ -24,17 +24,17 @@ export class ProductService {
   }
 
   create(product: Product): Observable<JsonResponse> {
-    console.log("usersvc.create...");
+    console.log("productsvc.create...");
       return this.http.post(this.url, product) as Observable<JsonResponse>;
   }
 
   edit(product: Product): Observable<JsonResponse> {
-    console.log("usersvc.edit...");
+    console.log("productsvc.edit...");
       return this.http.put(this.url, product) as Observable<JsonResponse>;
   }
 
   remove(product: Product): Observable<JsonResponse> {
-    console.log("usersvc.remove...")
+    console.log("productsvc.remove...")
       return this.http.delete(this.url+product.id) as Observable<JsonResponse>;
   }
 }

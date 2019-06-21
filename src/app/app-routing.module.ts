@@ -13,6 +13,12 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { PurchaseRequestListComponent } from './feature/pr/purchase-request-list/purchase-request-list.component';
+import { PurchaseRequestEditComponent } from './feature/pr/purchase-request-edit/purchase-request-edit.component';
+import { PurchaseRequestDetailComponent } from './feature/pr/purchase-request-detail/purchase-request-detail.component';
+import { PurchaseRequestCreateComponent } from './feature/pr/purchase-request-create/purchase-request-create.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { PurchaseRequestReviewComponent } from './feature/pr/purchase-request-review/purchase-request-review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/list', pathMatch: 'full' },
@@ -22,6 +28,7 @@ const routes: Routes = [
   { path: 'user/edit/:id', component: UserEditComponent },
   { path: 'user/detail/:id', component: UserDetailComponent },
   { path: 'user/remove/:id', component: UserDetailComponent },
+  { path: 'user/login', component: UserLoginComponent },
 
   { path: 'vendor/list', component: VendorListComponent },
   { path: 'vendor/create', component: VendorCreateComponent },
@@ -34,6 +41,13 @@ const routes: Routes = [
   { path: 'product/edit/:id', component: ProductEditComponent },
   { path: 'product/detail/:id', component: ProductDetailComponent },
   { path: 'product/remove/:id', component: ProductDetailComponent },
+
+  { path: 'pr/list', component: PurchaseRequestListComponent },
+  { path: 'pr/create', component: PurchaseRequestCreateComponent },
+  { path: 'pr/edit/:id', component: PurchaseRequestEditComponent },
+  { path: 'pr/detail/:id', component: PurchaseRequestDetailComponent },
+  { path: 'pr/remove/:id', component: PurchaseRequestDetailComponent },
+  { path: 'pr/review', component: PurchaseRequestReviewComponent },
 
   { path: 'about', component: AboutComponent },
 

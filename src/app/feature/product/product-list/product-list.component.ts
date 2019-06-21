@@ -15,6 +15,8 @@ export class ProductListComponent implements OnInit {
   title: string = "Product List";
   jr: JsonResponse;
   products: Product[];
+  sortCriteria: string = "id";
+  sortOrder: string = "asc"; // or anything else for desc
 
   ngOnInit() {
     this.productSvc.list().subscribe(
@@ -30,6 +32,15 @@ export class ProductListComponent implements OnInit {
         }
       }
     )
+  }
+
+  sortBy(column: string): void {
+    if(this.sortCriteria === column) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortCriteria = column;
+      this.sortOrder = 'asc';
+    }
   }
 
 }

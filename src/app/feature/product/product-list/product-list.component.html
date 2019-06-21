@@ -9,18 +9,18 @@
   </div>
   <p *ngIf='!products'>Loading ...</p>
   <table class="table table-sm" *ngIf='products'>
-    <tr>
+    <tr class='stky-hdr'>
       <th class="table-secondary btn-link">
-        <a class="btn btn-link font-weight-bold"><u>Id</u></a>
+        <a class="btn btn-link font-weight-bold" (click)="sortBy('id')"><u>Id</u></a>
       </th>
       <th class="table-secondary btn-link">
-        <a class="btn btn-link font-weight-bold"><u>Vendor</u></a>
+        <a class="btn btn-link font-weight-bold" (click)="sortBy('vendor')"><u>Vendor</u></a>
       </th>
       <th class="table-secondary btn-link">
-        <a class="btn btn-link font-weight-bold"><u>PartNumber</u></a>
+        <a class="btn btn-link font-weight-bold" (click)="sortBy('partNumber')"><u>PartNumber</u></a>
       </th>
       <th class="table-secondary btn-link">
-        <a class="btn btn-link font-weight-bold"><u>Name</u></a>
+        <a class="btn btn-link font-weight-bold" (click)="sortBy('name')"><u>Name</u></a>
       </th>
       <th class="table-secondary btn-link">
         <a class="btn btn-link font-weight-bold"><u>Price</u></a>
@@ -32,7 +32,7 @@
         PhotoPath
       </th>
     </tr>
-    <tr *ngFor='let product of products'>
+    <tr *ngFor='let product of products | sort:sortCriteria:sortOrder'>
       <td>{{product.id}}</td>
       <td>{{product.vendor.name}}</td>
       <td>{{product.partNumber}}</td>

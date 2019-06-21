@@ -1,0 +1,27 @@
+<app-menu></app-menu>
+<div class='component-content'>
+      <div class = 'lefthalf'>
+        <span class='component-title'>[{{title}}]</span>
+      </div>
+    </div>
+    <table class="table table-sm" *ngIf='purchaseRequest'>
+      <tr>
+        <td>Id</td><td>{{ purchaseRequest.id}}</td>
+      </tr>
+      <tr>
+        <td>User Name</td><td>{{ purchaseRequest.user.userName }}</td>
+      </tr>
+      <tr>
+        <td>Description</td><td>{{ purchaseRequest.description }}</td>
+      </tr>
+      <tr>       
+        <td>Status</td><td>{{ purchaseRequest.status }}</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <a routerLink='/pr/edit/{{purchaseRequest.id}}' class='btn btn-primary' title='Edit'>Edit</a>
+          <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
+        </td>
+      </tr>
+    </table>
+  

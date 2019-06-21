@@ -38,4 +38,8 @@ export class UserService {
     console.log("usersvc.remove...")
       return this.http.delete(this.url+user.id) as Observable<JsonResponse>;
   }
+
+  login(user: User): Observable<JsonResponse> {
+    return this.http.post(this.url+"authenticate",user) as Observable<JsonResponse>;
+  }
 }

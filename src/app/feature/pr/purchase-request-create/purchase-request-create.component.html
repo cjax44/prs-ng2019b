@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+
+<div id='component'>
+    <div id = "pagetitle">
+    <span>[{{title}}]</span>
+    </div>
+    <p *ngIf='!purchaseRequest'>Loading...</p>
+    <div *ngIf='purchaseRequest'>
+
+      <!-- <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="id">ID:</label>
+        <input [(ngModel)]='purchaseRequest.id' name = 'id' type="text" class="form-control col-sm-6" id="id" aria-describedby="fnameHelp" placeholder="ID">
+        <small id="fnameHelp" class="form-text text-muted col-sm-2">Id</small>
+      </div> -->
+
+      <div class='form-group row' >
+          <label class='col-form-label col-sm-2' for="purchaserequestuser">User:</label>
+          <input [(ngModel)]='purchaseRequest.user.userName' name='Name' type="text" class="form-control col-sm-6" id="purchaserequestuser" aria-describedby="usrHelp" placeholder="UserName" disabled>
+            <small id="usrHelp" class="form-text text-muted col-sm-2">The UserName</small>
+        </div>
+      
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="price">Description:</label>
+        <input [(ngModel)]='purchaseRequest.description' name = 'description' type="text" class="form-control col-sm-6" id="description" aria-describedby="unameHelp" placeholder="Description">
+        <small id="unameHelp" class="form-text text-muted col-sm-2">Description</small>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="justification">Justification:</label>
+        <input [(ngModel)]='purchaseRequest.justification' name = 'justification' type="text" class="form-control col-sm-6" id="justification" aria-describedby="pwdHelp" placeholder="Justification">
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Justification</small>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="dateNeeded">Date Needed:</label>
+        <input [(ngModel)]='purchaseRequest.dateNeeded' name = 'dateNeeded' type="date" class="form-control col-sm-6" id="dateNeeded" aria-describedby="phoneHelp" placeholder="Date Needed">
+        <small id="phoneHelp" class="form-text text-muted col-sm-2">Date Needed</small>
+      </div> 
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
+        <input [(ngModel)]='purchaseRequest.deliveryMode' name = 'deliveryMode' type="text" class="form-control col-sm-6" id="deliveryMode" aria-describedby="pwdHelp" placeholder="Delivery Mode">
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Delivery Mode</small>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="status">Status:</label>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Status" disabled>
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Status</small>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="total">Total:</label>
+        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control col-sm-6" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled> 
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Total</small>
+      </div>
+      <div class='form-group'>
+        <button (click)='create()' class='btn btn-primary'>Create</button>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
