@@ -41,7 +41,7 @@
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="status">Status:</label>
-        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Status" disabled>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Review" disabled>
         <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Status</small>
       </div>
       <div class="form-group row">
@@ -50,7 +50,7 @@
         <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Total</small>
       </div>
       <div class='form-group'>
-        <button (click)='create()' class='btn btn-primary'>Create</button>
+        <button (click)='create()' class='btn btn-primary'>Submit for Review</button>
       </div>
     </div>
   </div>

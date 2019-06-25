@@ -42,23 +42,23 @@
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="status">Status:</label>
-        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Status">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Product's Status</small>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Status" disabled>
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Status</small>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="total">Total:</label>
-        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control col-sm-6" id="total" aria-describedby="pwdHelp" placeholder="Total">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Product's Total</small>
+        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control col-sm-6" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled>
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Total</small>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="submittedDate">Date Submitted:</label>
-        <input [(ngModel)]='purchaseRequest.submittedDate' name = 'submittedDate' type="date" class="form-control col-sm-6" id="submittedDate" aria-describedby="pwdHelp" placeholder="Date Submitted">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Product's Date Submitted</small>
+        <input [(ngModel)]='purchaseRequest.submittedDate' name = 'submittedDate' type="date" class="form-control col-sm-6" id="submittedDate" aria-describedby="pwdHelp" placeholder="Date Submitted" disabled>
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Date Submitted</small>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="reasonForRejection">Reason for Rejection:</label>
         <input [(ngModel)]='purchaseRequest.reasonForRejection' name = 'reasonForRejection' type="text" class="form-control col-sm-6" id="reasonForRejection" aria-describedby="pwdHelp" placeholder="Reason for Rejection">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Product's Reason for Rejection</small>
+        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Reason for Rejection</small>
       </div>
       <div class='form-group'>
         <button (click)='edit()' class='btn btn-primary'>Update</button>

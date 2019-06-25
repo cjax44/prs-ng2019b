@@ -1,10 +1,11 @@
 <app-menu></app-menu>
-<div class='component-content'>
+<div class='component-content mt-3'>
       <div class = 'lefthalf'>
         <span class='component-title'>[{{title}}]</span>
       </div>
     </div>
-    <table class="table table-sm" *ngIf='purchaseRequest'>
+    <div class="container-fluid" style="margin-left: 0px auto; margin-right: 0px auto; margin-top: 30px; width: 35%">
+    <table class="table" *ngIf='purchaseRequest'>
       <tr>
         <td>Id</td><td>{{ purchaseRequest.id}}</td>
       </tr>
@@ -17,11 +18,11 @@
       <tr>       
         <td>Status</td><td>{{ purchaseRequest.status }}</td>
       </tr>
-      <tr>
-        <td colspan="2">
-          <a routerLink='/pr/edit/{{purchaseRequest.id}}' class='btn btn-primary' title='Edit'>Edit</a>
-          <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
-        </td>
-      </tr>
     </table>
+    </div>
+    <div class="container-fluid" style="margin-left: 0px auto; margin-right: 0px auto; margin-top: 20px; width: 35%">
+    <a routerLink='/pr/edit/{{purchaseRequest.id}}' class='btn btn-primary' style="margin-left: 15px" title='Edit'>Edit</a>
+    <button (click)='submit()' class='btn btn-primary' style="margin-left: 15px">Submit for Review</button>     
+    <button (click)="remove()" class='btn btn-danger' style="margin-left: 15px" title='Delete'>Remove</button>
+  </div>
   

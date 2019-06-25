@@ -19,6 +19,9 @@ import { PurchaseRequestDetailComponent } from './feature/pr/purchase-request-de
 import { PurchaseRequestCreateComponent } from './feature/pr/purchase-request-create/purchase-request-create.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { PurchaseRequestReviewComponent } from './feature/pr/purchase-request-review/purchase-request-review.component';
+import { PurchaseRequestLinesComponent } from './feature/pr/purchase-request-lines/purchase-request-lines.component';
+import { PurchaseRequestLineItemCreateComponent } from './feature/prli/purchase-request-line-item-create/purchase-request-line-item-create.component';
+import { PurchaseRequestLineItemEditComponent } from './feature/prli/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/list', pathMatch: 'full' },
@@ -48,6 +51,11 @@ const routes: Routes = [
   { path: 'pr/detail/:id', component: PurchaseRequestDetailComponent },
   { path: 'pr/remove/:id', component: PurchaseRequestDetailComponent },
   { path: 'pr/review', component: PurchaseRequestReviewComponent },
+
+  { path: 'pr/lines/list/:id', component: PurchaseRequestLinesComponent },
+  { path: 'pr/lines/create/:id', component: PurchaseRequestLineItemCreateComponent },
+  { path: 'pr/lines/edit', component: PurchaseRequestLineItemEditComponent },
+  { path: 'pr/lines/remove/:id/:del', component: PurchaseRequestLinesComponent },
 
   { path: 'about', component: AboutComponent },
 

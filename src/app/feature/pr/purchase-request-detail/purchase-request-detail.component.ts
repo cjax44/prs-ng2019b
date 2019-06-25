@@ -10,8 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./purchase-request-detail.component.css']
 })
 export class PurchaseRequestDetailComponent implements OnInit {
-  title: string = "User Detail";
-  prodIdStr: string;
+  title: string = "Purchase Request Detail";
+  prIdStr: string;
   jr: JsonResponse;
   purchaseRequest: PurchaseRequest;
   
@@ -19,8 +19,8 @@ export class PurchaseRequestDetailComponent implements OnInit {
 
   ngOnInit() {
     //get pr from db
-    this.route.params.subscribe(params => this.prodIdStr = params['id']);
-    this.prSvc.get(this.prodIdStr).subscribe(jresp => {
+    this.route.params.subscribe(params => this.prIdStr = params['id']);
+    this.prSvc.get(this.prIdStr).subscribe(jresp => {
       this.jr = jresp;
       this.purchaseRequest = this.jr.data as PurchaseRequest;
     });
@@ -28,6 +28,15 @@ export class PurchaseRequestDetailComponent implements OnInit {
 
   remove() {
     this.prSvc.remove(this.purchaseRequest).subscribe(
+      jresp => {
+        this.jr = jresp;
+        this.purchaseRequest = this.jr.data as PurchaseRequest;
+        this.router.navigate(['/pr/list']);
+      });
+  }
+
+  submit() {
+    this.prSvc.submitForReview(this.purchaseRequest).subscribe(
       jresp => {
         this.jr = jresp;
         this.purchaseRequest = this.jr.data as PurchaseRequest;

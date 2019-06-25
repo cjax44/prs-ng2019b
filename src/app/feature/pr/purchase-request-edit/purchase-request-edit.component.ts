@@ -12,7 +12,7 @@ import { PurchaseRequestService } from 'src/app/service/pr.service';
   styleUrls: ['./purchase-request-edit.component.css']
 })
 export class PurchaseRequestEditComponent implements OnInit {
-  title: string = 'Purhcase Request Edit';
+  title: string = 'Purchase Request Edit';
   jr: JsonResponse;
   purchaseRequest: PurchaseRequest;
   prIdStr: string;
@@ -47,4 +47,6 @@ export class PurchaseRequestEditComponent implements OnInit {
         this.router.navigate(['/pr/list']);
       });
   }
+
+  
 }

@@ -62,7 +62,7 @@ import { PurchaseRequestLineItemEditComponent } from './feature/prli/purchase-re
     PurchaseRequestReviewComponent,
     PurchaseRequestLinesComponent,
     PurchaseRequestLineItemCreateComponent,
-    PurchaseRequestLineItemEditComponent
+    PurchaseRequestLineItemEditComponent,
   ],
   imports: [
     BrowserModule,
