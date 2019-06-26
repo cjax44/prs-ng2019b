@@ -5,6 +5,7 @@ import { PurchaseRequest } from 'src/app/model/purchase-request.class';
 import { JsonResponse } from 'src/app/model/json-response.class';
 import { PrliService } from 'src/app/service/prli.service';
 import { Prli } from 'src/app/model/prli.class';
+import { Product } from 'src/app/model/product.class';
 
 @Component({
   selector: 'app-purchase-request-lines',
@@ -21,6 +22,7 @@ export class PurchaseRequestLinesComponent implements OnInit {
   prli: Prli;
   prliIdStr: string = '0';
   total: number;
+  product: Product = new Product();
 
   constructor(private prliSvc: PrliService, private prSvc: PurchaseRequestService, private router: Router, private route: ActivatedRoute) { }
 
@@ -61,8 +63,6 @@ export class PurchaseRequestLinesComponent implements OnInit {
       this.purchaseRequest = this.jr.data as PurchaseRequest;
     });
 
-    
-
     this.prSvc.list().subscribe(
       jresp => {
         this.jr = jresp;
@@ -80,6 +80,8 @@ export class PurchaseRequestLinesComponent implements OnInit {
     if (this.prliIdStr != '0' && this.prliIdStr !=null) {
       this.remove();
     }
+  
+   
    
   }
 
@@ -91,5 +93,17 @@ export class PurchaseRequestLinesComponent implements OnInit {
         this.prli = this.jr.data as Prli;
         this.router.navigate(['/pr/lines/list/'+this.prIdStr]);
       });
+  }
+
+  edit() {
+
+    this.prliSvc.edit(this.prli).subscribe(
+      jresp => {
+        this.jr = jresp;
+        this.prli = this.jr.data as Prli;
+        
+        this.router.navigate(['pr/lines/edit/'+this.prIdStr])
+      }
+    )
   }
 }

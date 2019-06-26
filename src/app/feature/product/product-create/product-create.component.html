@@ -1,12 +1,12 @@
 <app-menu></app-menu>
 <div id='component'>
-    <div id = "pagetitle">
+    <!-- <div id = "pagetitle">
     <span>[{{title}}]</span>
-    </div>
-    <p *ngIf='!Product'>Loading...</p>
+    </div> -->
+    <p *ngIf='!product'>Loading...</p>
     <div *ngIf='product'>
 
-
+      <div class='container-fluid'>
       <div class='form-group row' >
         <label class='col-form-label col-sm-2' for="vendor">Vendor:</label>
         <div class=' col-sm-6'>
@@ -18,31 +18,32 @@
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="partnumber">Part Number:</label>
         <input [(ngModel)]='product.partNumber' name = 'partNumber' type="text" class="form-control col-sm-6" id="partnumber" aria-describedby="fnameHelp" placeholder="Part Number">
-        <small id="fnameHelp" class="form-text text-muted col-sm-2">Product's Number</small>
+       
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="productname">Name:</label>
         <input [(ngModel)]='product.name' name = 'name' type="text" class="form-control col-sm-6" id="productname" aria-describedby="lnameHelp" placeholder="Name">
-        <small id="lnameHelp" class="form-text text-muted col-sm-2">Product's Name</small>
+       
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="price">Price:</label>
         <input [(ngModel)]='product.price' name = 'price' type="text" class="form-control col-sm-6" id="price" aria-describedby="unameHelp" placeholder="Price">
-        <small id="unameHelp" class="form-text text-muted col-sm-2">Product's Price</small>
+       
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="unit">Unit:</label>
         <input [(ngModel)]='product.unit' name = 'unit' type="text" class="form-control col-sm-6" id="unit" aria-describedby="pwdHelp" placeholder="Unit">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Product's Unit</small>
+       
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="photoPath">Photopath:</label>
         <input [(ngModel)]='product.photoPath' name = 'photoPath' type="text" class="form-control col-sm-6" id="photoPath" aria-describedby="phoneHelp" placeholder="Photopath">
-        <small id="phoneHelp" class="form-text text-muted col-sm-2">Product's Photopath</small>
+       
       </div>
       <div class='form-group'>
         <button (click)='create()' class='btn btn-primary'>Create</button>
       </div>
     </div>
+  </div>
   </div>
   <router-outlet></router-outlet>

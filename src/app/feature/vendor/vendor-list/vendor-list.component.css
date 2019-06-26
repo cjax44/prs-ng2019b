@@ -1,0 +1,38 @@
+tr.stky-hdr:first-child th {
+    background-color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.table {
+    max-width: 85%;
+    margin: 0px auto;
+    float: none;
+}
+
+#vendortable {
+    border: 1px solid black;
+
+}
+
+.row {
+    padding: 15px;
+}
+
+th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+}
+
+td {
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 15px;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.4em;
+}

@@ -1,16 +1,14 @@
 <app-menu></app-menu>
 <div id='component'>
-        <div id = "pagetitle">
-        <span>[{{title}}]</span>
-        </div>
+       
         <p *ngIf='!purchaseRequest'>Loading...</p>
         <div *ngIf='purchaseRequest'>
 
     <div class='form-group row' >
     <label class='col-form-label col-sm-2' for="product">Product:</label>
         <div class=' col-sm-6'>
-            <select [(ngModel)]='prli.product' class='form-control' name='Product' id='product'>
-                <option *ngFor="let product of products" [ngValue]="product">{{product.id}} - {{product.name}}</option>
+            <select [(ngModel)]='prli.product.id' class='form-control' name='Product' id='product'>
+                <option *ngFor="let product of products" [ngValue]="product.id" [selected]="product.id == prli.product.id">{{product.id}} - {{product.name}}</option>
             </select>
         </div>
     </div>

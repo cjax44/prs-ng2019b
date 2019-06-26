@@ -1,9 +1,9 @@
 <app-menu></app-menu>
 
 <div id='component'>
-    <div id = "pagetitle">
+    <!-- <div id = "pagetitle">
     <span>[{{title}}]</span>
-    </div>
+    </div> -->
     <p *ngIf='!purchaseRequest'>Loading...</p>
     <div *ngIf='purchaseRequest'>
 
@@ -41,16 +41,16 @@
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="status">Status:</label>
-        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Review" disabled>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="New" disabled>
         <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Status</small>
       </div>
-      <div class="form-group row">
+      <!-- <div class="form-group row">
         <label class='col-form-label col-sm-2' for="total">Total:</label>
         <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control col-sm-6" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled> 
         <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Total</small>
-      </div>
+      </div> -->
       <div class='form-group'>
-        <button (click)='create()' class='btn btn-primary'>Submit for Review</button>
+        <button (click)='create()' class='btn btn-primary'>Create Purchase Request</button>
       </div>
     </div>
   </div>

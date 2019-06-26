@@ -1,0 +1,29 @@
+#wrap {
+    width: 80%;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding-top: 20px;
+    
+}
+
+input {
+    margin: 0px auto;
+
+}
+
+label {
+    margin-left: 20%;
+    text-align: right;
+    margin-right: -20%;
+
+}
+
+select {
+    margin: 0px auto;
+}
+
+
+div.form-group {
+    text-align: center;
+    
+}

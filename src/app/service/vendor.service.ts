@@ -24,17 +24,17 @@ export class VendorService {
   }
 
   create(vendor: Vendor): Observable<JsonResponse> {
-    console.log("usersvc.create...");
+    console.log("vendorsvc.create...");
       return this.http.post(this.url, vendor) as Observable<JsonResponse>;
   }
 
   edit(vendor: Vendor): Observable<JsonResponse> {
-    console.log("usersvc.edit...");
+    console.log("vendorsvc.edit...");
       return this.http.put(this.url, vendor) as Observable<JsonResponse>;
   }
 
   remove(vendor: Vendor): Observable<JsonResponse> {
-    console.log("usersvc.remove...")
+    console.log("vendorsvc.remove...")
       return this.http.delete(this.url+vendor.id) as Observable<JsonResponse>;
   }
 }

@@ -56,17 +56,23 @@
               <a class="font-weight-bold"><u>Actions</u></a>
             </th>
           </tr>
+          
           <tr *ngFor='let prli of prlis'class="text-center row">
               <td>{{prli.product.name}}</td>
               <td>{{prli.quantity}}</td> 
               <td>{{prli.product.price | currency}}</td>
               <td>{{prli.quantity * prli.product.price | currency}}</td>
               <td class='actions'>
-                  <button (click)="edit()" class='btn' style='margin: 5px;' title='edit'>Edit</button>
+                  <a routerLink='/pr/lines/edit/{{purchaseRequest.id}}/{{prli.id}}'>Edit</a> | 
                   <a routerLink='/pr/lines/remove/{{purchaseRequest.id}}/{{prli.id}}' (click)="remove()">Remove</a>
                 </td>
           </tr>
-    </table>
+
+          
+        </table>
+            <div *ngIf='prlis.length==0' class="text-danger">
+                <p class='text-center' style='margin-top: 15px;'>No line items yet.  Please create a new one!</p>
+            </div>
   </div>
 
 

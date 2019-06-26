@@ -1,19 +1,16 @@
 <app-menu></app-menu>
 <div id='component'>
-    <div id = "pagetitle">
-    <span>[{{title}}]</span>
-    </div>
+    
     <p *ngIf='!purchaseRequest'>Loading...</p>
+    <div id="wrap">
     <div *ngIf='purchaseRequest'>
-
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="id">ID:</label>
-        <input [(ngModel)]='purchaseRequest.id' name = 'id' type="text" class="form-control col-sm-6" id="id" aria-describedby="fnameHelp" placeholder="ID">
-        <small id="fnameHelp" class="form-text text-muted col-sm-2">Id</small>
+        <input [(ngModel)]='purchaseRequest.id' name = 'id' type="text" class="form-control" id="id" aria-describedby="fnameHelp" placeholder="ID">
       </div>
       <div class="form-group row">
           <label class='col-form-label col-sm-2' for="user">User:</label>
-          <div class='col-sm-6 select-list'>
+          <div class='select-list'>
             <select [(ngModel)]='purchaseRequest.user.id' [compareWith]='compareFn' class='form-control' name='User' id='purchaseRequest-User'>
                     <option *ngFor="let user of users" [ngValue]="user.id" [selected]="user.id == purchaseRequest.user.id">{{user.id}} - {{user.userName}}</option>
                   </select>
@@ -22,47 +19,40 @@
      
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="price">Description:</label>
-        <input [(ngModel)]='purchaseRequest.description' name = 'description' type="text" class="form-control col-sm-6" id="description" aria-describedby="unameHelp" placeholder="Description">
-        <small id="unameHelp" class="form-text text-muted col-sm-2">Description</small>
+        <input [(ngModel)]='purchaseRequest.description' name = 'description' type="text" class="form-control" id="description" aria-describedby="unameHelp" placeholder="Description">
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="justification">Justification:</label>
-        <input [(ngModel)]='purchaseRequest.justification' name = 'justification' type="text" class="form-control col-sm-6" id="justification" aria-describedby="pwdHelp" placeholder="Justification">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Justification</small>
+        <input [(ngModel)]='purchaseRequest.justification' name = 'justification' type="text" class="form-control" id="justification" aria-describedby="pwdHelp" placeholder="Justification">
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="dateNeeded">Date Needed:</label>
-        <input [(ngModel)]='purchaseRequest.dateNeeded' name = 'dateNeeded' type="date" class="form-control col-sm-6" id="dateNeeded" aria-describedby="phoneHelp" placeholder="Date Needed">
-        <small id="phoneHelp" class="form-text text-muted col-sm-2">Date Needed</small>
+        <input [(ngModel)]='purchaseRequest.dateNeeded' name = 'dateNeeded' type="date" class="form-control" id="dateNeeded" aria-describedby="phoneHelp" placeholder="Date Needed">
       </div> 
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
-        <input [(ngModel)]='purchaseRequest.deliveryMode' name = 'deliveryMode' type="text" class="form-control col-sm-6" id="deliveryMode" aria-describedby="pwdHelp" placeholder="Delivery Mode">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Delivery Mode</small>
+        <input [(ngModel)]='purchaseRequest.deliveryMode' name = 'deliveryMode' type="text" class="form-control" id="deliveryMode" aria-describedby="pwdHelp" placeholder="Delivery Mode">
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="status">Status:</label>
-        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control col-sm-6" id="status" aria-describedby="pwdHelp" placeholder="Status" disabled>
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Status</small>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control" id="status" aria-describedby="pwdHelp" placeholder="Status" disabled>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="total">Total:</label>
-        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control col-sm-6" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled>
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Total</small>
+        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="submittedDate">Date Submitted:</label>
-        <input [(ngModel)]='purchaseRequest.submittedDate' name = 'submittedDate' type="date" class="form-control col-sm-6" id="submittedDate" aria-describedby="pwdHelp" placeholder="Date Submitted" disabled>
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Date Submitted</small>
+        <input [(ngModel)]='purchaseRequest.submittedDate' name = 'submittedDate' type="date" class="form-control" id="submittedDate" aria-describedby="pwdHelp" placeholder="Date Submitted" disabled>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="reasonForRejection">Reason for Rejection:</label>
-        <input [(ngModel)]='purchaseRequest.reasonForRejection' name = 'reasonForRejection' type="text" class="form-control col-sm-6" id="reasonForRejection" aria-describedby="pwdHelp" placeholder="Reason for Rejection">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">Purchase Request's Reason for Rejection</small>
+        <input [(ngModel)]='purchaseRequest.reasonForRejection' name = 'reasonForRejection' type="text" class="form-control" id="reasonForRejection" aria-describedby="pwdHelp" placeholder="Reason for Rejection">
       </div>
       <div class='form-group'>
         <button (click)='edit()' class='btn btn-primary'>Update</button>
       </div>
+    </div>
     </div>
   </div>
   <router-outlet></router-outlet>

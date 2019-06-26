@@ -1,3 +1,60 @@
-<p>
-  purchase-request-approve works!
-</p>
+<app-menu></app-menu>
+<div id='component'>
+    
+    <p *ngIf='!purchaseRequest'>Loading...</p>
+    <div id="wrap">
+    <div *ngIf='purchaseRequest'>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="id">ID:</label>
+        <input [(ngModel)]='purchaseRequest.id' name = 'id' type="text" class="form-control" id="id" aria-describedby="fnameHelp" placeholder="ID">
+      </div>
+      <div class="form-group row">
+          <label class='col-form-label col-sm-2' for="user">User:</label>
+          <div class='select-list'>
+            <select [(ngModel)]='purchaseRequest.user.id' [compareWith]='compareFn' class='form-control' name='User' id='purchaseRequest-User'>
+                    <option *ngFor="let user of users" [ngValue]="user.id" [selected]="user.id == purchaseRequest.user.id">{{user.id}} - {{user.userName}}</option>
+                  </select>
+          </div>
+        </div>
+     
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="price">Description:</label>
+        <input [(ngModel)]='purchaseRequest.description' name = 'description' type="text" class="form-control" id="description" aria-describedby="unameHelp" placeholder="Description">
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="justification">Justification:</label>
+        <input [(ngModel)]='purchaseRequest.justification' name = 'justification' type="text" class="form-control" id="justification" aria-describedby="pwdHelp" placeholder="Justification">
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="dateNeeded">Date Needed:</label>
+        <input [(ngModel)]='purchaseRequest.dateNeeded' name = 'dateNeeded' type="date" class="form-control" id="dateNeeded" aria-describedby="phoneHelp" placeholder="Date Needed">
+      </div> 
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="deliveryMode">Delivery Mode:</label>
+        <input [(ngModel)]='purchaseRequest.deliveryMode' name = 'deliveryMode' type="text" class="form-control" id="deliveryMode" aria-describedby="pwdHelp" placeholder="Delivery Mode">
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="status">Status:</label>
+        <input [(ngModel)]='purchaseRequest.status' name = 'status' type="text" class="form-control" id="status" aria-describedby="pwdHelp" placeholder="Status">
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="total">Total:</label>
+        <input [(ngModel)]='purchaseRequest.total' name = 'total' type="text" class="form-control" id="total" aria-describedby="pwdHelp" placeholder="Total" disabled>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="submittedDate">Date Submitted:</label>
+        <input [(ngModel)]='purchaseRequest.submittedDate' name = 'submittedDate' type="date" class="form-control" id="submittedDate" aria-describedby="pwdHelp" placeholder="Date Submitted" disabled>
+      </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="reasonForRejection">Reason for Rejection:</label>
+        <input [(ngModel)]='purchaseRequest.reasonForRejection' name = 'reasonForRejection' type="text" class="form-control" id="reasonForRejection" aria-describedby="pwdHelp" placeholder="Reason for Rejection">
+      </div>
+      <div class='form-group' style='margin-left: 20px;'>
+        <button (click)='approve()' class='btn btn-primary'>Approve</button>
+        <div style="display: inline-block; margin-left: 15px;" *ngIf='purchaseRequest.reasonForRejection != ""'><button class="btn btn-danger" (click)='reject()'>Reject</button></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+

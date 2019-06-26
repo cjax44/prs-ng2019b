@@ -1,36 +1,36 @@
 <app-menu></app-menu>
 <div class='component-content'>
-      <div class = 'lefthalf'>
-        <span class='component-title'>[{{title}}]</span>
-      </div>
-    </div>
-    <table class="table table-sm" *ngIf='product'>
+    
+    <table class="table table-sm" id="dettable" *ngIf='product'>
+      <caption>Product Detail</caption>
       <tr>
-        <td>Id</td><td>{{ product.id}}</td>
+        <td class="colfirst">Id</td><td>{{ product.id}}</td>
       </tr>
       <tr>
-        <td>Part Number</td><td>{{ product.partNumber }}</td>
+        <td class="colfirst">Part Number</td><td>{{ product.partNumber }}</td>
       </tr>
       <tr>
-        <td>Vendor</td><td>{{ product.vendor.name }}</td>
+        <td class="colfirst">Vendor</td><td>{{ product.vendor.name }}</td>
       </tr>
       <tr>       
-        <td>Product Name</td><td>{{ product.name }}</td>
+        <td class="colfirst">Product Name</td><td>{{ product.name }}</td>
       </tr>
       <tr>
-        <td>Price</td><td>{{ product.price }}</td>
+        <td class="colfirst">Price</td><td>{{ product.price }}</td>
       </tr>
       <tr>
-        <td>Unit</td><td>{{ product.unit }}</td>
+        <td class="colfirst">Unit</td><td>{{ product.unit }}</td>
       </tr>
       <tr>
-        <td>PhotoPath</td><td>{{ product.photoPath }}</td>
+        <td class="colfirst">PhotoPath</td><td>{{ product.photoPath }}</td>
       </tr>
       <tr>
-        <td colspan="2">
+        <td colspan="2" style="text-align: center">
           <a routerLink='/product/edit/{{product.id}}' class='btn btn-primary' title='Edit'>Edit</a>
           <button (click)="remove()" class='btn btn-danger' title='Delete'>Remove</button>
         </td>
       </tr>
     </table>
+
+  </div>
   

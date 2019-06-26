@@ -1,0 +1,23 @@
+
+#component {
+    width: 100%;
+    margin: 10px 20%;
+    padding-top: 50px;
+   
+}
+
+select {
+    min-width: 300px;
+    margin-left: -15px;
+}
+
+.form-control {
+    min-width: 300px;
+    width: 35%;
+}
+
+
+
+
+
+

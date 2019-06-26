@@ -15,6 +15,7 @@ export class PurchaseRequestCreateComponent implements OnInit {
   title: 'Purchase Request Create';
   jr: JsonResponse;
   purchaseRequest: PurchaseRequest = new PurchaseRequest();
+  prIdStr: string;
  
 
   constructor(private prSvc: PurchaseRequestService, private sysSvc: SystemService, private router: Router) { }
@@ -34,7 +35,8 @@ export class PurchaseRequestCreateComponent implements OnInit {
       jresp => {
         this.jr = jresp;
         //assuming good call
-        this.router.navigate(['/pr/list']);
+        let pr = this.jr.data as PurchaseRequest;
+        this.router.navigate(['/pr/lines/list/'+pr.id]);
       }
     )
   }

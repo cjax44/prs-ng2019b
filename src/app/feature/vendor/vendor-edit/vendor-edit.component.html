@@ -1,50 +1,40 @@
 <app-menu></app-menu>
 <div id='component'>
-    <div id = "pagetitle">
-    <span>[{{title}}]</span>
-    </div>
+    
     <p *ngIf='!vendor'>Loading...</p>
-    <div *ngIf='vendor'>
+    <div *ngIf='vendor' id="wrap">
      
       <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="userfirstname">First name:</label>
-        <input [(ngModel)]='user.firstName' name = 'FirstName' type="text" class="form-control col-sm-6" id="userfirstname" aria-describedby="fnameHelp" placeholder="FirstName">
-        <small id="fnameHelp" class="form-text text-muted col-sm-2">User's First Name</small>
+        <label class='col-form-label col-sm-2' for="vendorcode">Code:</label>
+        <input [(ngModel)]='vendor.code' name = 'VendorCode' type="text" class="form-control" id="vendorcode" aria-describedby="lnameHelp" placeholder="LastName">
       </div>
       <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="userlastName">Last name:</label>
-        <input [(ngModel)]='user.lastName' name = 'LastName' type="text" class="form-control col-sm-6" id="userlastname" aria-describedby="lnameHelp" placeholder="LastName">
-        <small id="lnameHelp" class="form-text text-muted col-sm-2">User's Last Name</small>
+        <label class='col-form-label col-sm-2' for="vendorname">Vendor name:</label>
+        <input [(ngModel)]='vendor.name' name = 'VendorName' type="text" class="form-control" id="vendorname" aria-describedby="fnameHelp" placeholder="Vendor Name">
       </div>
       <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="username">Username:</label>
-        <input [(ngModel)]='user.userName' name = 'UserName' type="text" class="form-control col-sm-6" id="username" aria-describedby="unameHelp" placeholder="UserName">
-        <small id="unameHelp" class="form-text text-muted col-sm-2">User's UserName</small>
+        <label class='col-form-label col-sm-2' for="address">Address:</label>
+        <input [(ngModel)]='vendor.address' name = 'VendorAddress' type="text" class="form-control" id="address" aria-describedby="lnameHelp" placeholder="Address">
       </div>
       <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="password">Password:</label>
-        <input [(ngModel)]='user.password' name = 'Password' type="text" class="form-control col-sm-6" id="password" aria-describedby="pwdHelp" placeholder="Password">
-        <small id="pwdHelp" class="form-text text-muted col-sm-2">User's Password</small>
+        <label class='col-form-label col-sm-2' for="city">City:</label>
+        <input [(ngModel)]='vendor.city' name = 'VendorCity' type="text" class="form-control" id="city" aria-describedby="unameHelp" placeholder="City">
       </div>
+      <div class="form-group row">
+        <label class='col-form-label col-sm-2' for="state">State:</label>
+        <input [(ngModel)]='vendor.state' name = 'VendorState' type="text" class="form-control" id="state" aria-describedby="pwdHelp" placeholder="State">
+      </div>
+      <div class="form-group row">
+          <label class='col-form-label col-sm-2' for="zip">Zip:</label>
+          <input [(ngModel)]='vendor.zip' name = 'VendorZip' type="text" class="form-control" id="zip" aria-describedby="unameHelp" placeholder="Zip">
+        </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="phone">Phone Number:</label>
-        <input [(ngModel)]='user.phoneNumber' name = 'PhoneNumber' type="text" class="form-control col-sm-6" id="phone" aria-describedby="phoneHelp" placeholder="PhoneNumber">
-        <small id="phoneHelp" class="form-text text-muted col-sm-2">User's Phone Number</small>
+        <input [(ngModel)]='vendor.phoneNumber' name = 'PhoneNumber' type="text" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="PhoneNumber">
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="email">Email:</label>
-        <input [(ngModel)]='user.email' name = 'Email' type="text" class="form-control col-sm-6" id="email" aria-describedby="emailHelp" placeholder="Email">
-        <small id="emailHelp" class="form-text text-muted col-sm-2">User's Email</small>
-      </div>
-      <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="userAdmin">Admin:</label>
-        <input [(ngModel)]='user.admin' name = 'Admin' type="checkbox" class="form-control col-sm-6" id="userAdmin" aria-describedby="adminHelp" placeholder="Admin">
-        <small id="adminHelp" class="form-text text-muted col-sm-2">Admin Authority</small>
-      </div>
-      <div class="form-group row">
-        <label class='col-form-label col-sm-2' for="userReviewer">Reviewer:</label>
-        <input [(ngModel)]='user.reviewer' name = 'Reviewer' type="checkbox" class="form-control col-sm-6" id="userReviewer" aria-describedby="reviewerHelp" placeholder="Reviewer">
-        <small id="reviewerHelp" class="form-text text-muted col-sm-2">Reviewer Authority</small>
+        <input [(ngModel)]='vendor.email' name = 'Email' type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
       </div>
       <div class='form-group'>
         <button (click)='edit()' class='btn btn-primary'>Update</button>

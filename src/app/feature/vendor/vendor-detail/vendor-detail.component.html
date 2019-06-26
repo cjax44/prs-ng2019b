@@ -1,10 +1,9 @@
 <app-menu></app-menu>
 <div class='component-content'>
-    <div class = 'lefthalf'>
-      <span class='component-title'>[{{title}}]</span>
-    </div>
+    
   </div>
-  <table class="table table-sm" *ngIf='vendor'>
+  <table class="table table-sm" id="dettable" *ngIf='vendor'>
+    <caption>Vendor Detail</caption>
     <tr>
       <td>Id</td><td>{{ vendor.id}}</td>
     </tr>

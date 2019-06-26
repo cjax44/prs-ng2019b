@@ -1,10 +1,8 @@
 <app-menu></app-menu>
 <div id='component'>
-        <div id = "pagetitle">
-        <span>[{{title}}]</span>
-        </div>
+        
         <p *ngIf='!vendor'>Loading...</p>
-        <div *ngIf='vendor'>
+        <div *ngIf='vendor' class='container-fluid'>
          
           <div class="form-group row">
             <label class='col-form-label col-sm-2' for="vendorcode">Code:</label>

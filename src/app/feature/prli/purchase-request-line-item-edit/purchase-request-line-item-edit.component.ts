@@ -25,6 +25,7 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
   products: Product[] = [];
   product: Product = new Product();
   prli: Prli = new Prli();
+  prliIdStr: string;
 
 
   constructor(private productSvc: ProductService, private prSvc: PurchaseRequestService, 
@@ -33,24 +34,29 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.sysSvc.data.user.loggedIn) {
-      this.purchaseRequest.user = this.sysSvc.data.user.instance;
-    } else {
-      console.log("User not logged in");
-    }
+    // if (this.sysSvc.data.user.loggedIn) {
+    //   this.purchaseRequest.user = this.sysSvc.data.user.instance;
+    // } else {
+    //   console.log("User not logged in");
+    // }
 
-    //get pr from db
+    //get pr and prli strings from db
     this.route.params.subscribe(params => this.prIdStr = params['id']);
+    this.route.params.subscribe(params => this.prliIdStr = params['prli']);
     console.log("pr prdIdStr = "+this.prIdStr);
     this.prSvc.get(this.prIdStr).subscribe(jresp => {
       this.jr = jresp;
       this.purchaseRequest = this.jr.data as PurchaseRequest;
     });
-    console.log("getting pr from db" + this.purchaseRequest);
+    console.log("prli prliIdStr = "+this.prliIdStr);
+    this.prliSvc.get(this.prliIdStr).subscribe(jresp => {
+      this.jr = jresp;
+      this.prli = this.jr.data as Prli;
+    });
 
     // get products for dropdown list
-    this.route.params.subscribe(params => this.prIdStr = params['id']);
-    console.log("pr prdIdStr = "+this.prIdStr);
+    // this.route.params.subscribe(params => this.prIdStr = params['id']);
+    // console.log("pr prdIdStr = "+this.prIdStr);
     
     this.productSvc.list().subscribe(
       jresp => {
@@ -65,6 +71,17 @@ export class PurchaseRequestLineItemEditComponent implements OnInit {
         }
       }
     )
+  }
+
+  edit() {
+
+    this.prliSvc.edit(this.prli).subscribe(
+      jresp => {
+        this.jr = jresp;
+        this.prli = this.jr.data as Prli;
+        this.router.navigate(['/pr/lines/list/'+this.prIdStr]);
+      });
+
   }
 
 }

@@ -50,4 +50,9 @@ export class PurchaseRequestService {
     return this.http.put(this.url+"submit-review", purchaseRequest) as Observable<JsonResponse>;
 
   }
+
+  approve(purchaseRequest: PurchaseRequest): Observable<JsonResponse> {
+    console.log("prsvc.approve");
+    return this.http.put(this.url+"approve", purchaseRequest) as Observable<JsonResponse>;
+  }
 }

@@ -80,9 +80,9 @@ $(".input").focusout(function(){
 
 
 <div id='component'>
-    <div id = "pagetitle">
+    <!-- <div id = "pagetitle">
     <span>[{{title}}]</span>
-    </div>
+    </div> -->
     <p *ngIf='!user'>Loading...</p>
     <div *ngIf='user'>
      
@@ -103,12 +103,12 @@ $(".input").focusout(function(){
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="password">Password:</label>
-        <input [(ngModel)]='user.password' name = 'Password' type="text" class="form-control col-sm-6" id="password" aria-describedby="pwdHelp" placeholder="Password">
+        <input [(ngModel)]='user.password' maxlength="10" name = 'Password' type="text" class="form-control col-sm-6" id="password" aria-describedby="pwdHelp" placeholder="Password">
         <small id="pwdHelp" class="form-text text-muted col-sm-2">User's Password</small>
       </div>
       <div class="form-group row">
         <label class='col-form-label col-sm-2' for="phone">Phone Number:</label>
-        <input [(ngModel)]='user.phoneNumber' name = 'PhoneNumber' type="text" class="form-control col-sm-6" id="phone" aria-describedby="phoneHelp" placeholder="PhoneNumber">
+        <input [(ngModel)]='user.phoneNumber' maxlength="10" name = 'PhoneNumber' type="text" class="form-control col-sm-6" id="phone" aria-describedby="phoneHelp" placeholder="PhoneNumber">
         <small id="phoneHelp" class="form-text text-muted col-sm-2">User's Phone Number</small>
       </div>
       <div class="form-group row">
